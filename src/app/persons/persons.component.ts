@@ -18,11 +18,13 @@ export class PersonsComponent implements OnInit {
     ngOnInit() { }
 
     createPerson() {
+
          this.person.id = Date.now();
+         console.log(this.person);
         this.personsService.createPerson(this.person);
     }
 
-    cancelPerson() {
+    cancel() {
         this.person = {};
     }
 }

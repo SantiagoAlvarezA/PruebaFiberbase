@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="card">
+
+        <div class="card-body row">
+            <div class="col-8">
+                <div *ngFor="let movie of movies | async">
+
+                    <li class="list-group-item">
+                        <div>
+                            {{movie.tittle}}
+                        </div>
+                        <hr>
+                        <br>
+                        <img src="{{movie.link}}" alt="">
+                        <br>
+                        <div>
+                            {{movie.description}}
+                        </div>
+                    </li>
+
+                </div>
+            </div>
+            <div class="col-4">
+                <h2>Registrar peliculas</h2><br>
+                <div class="form-group">
+                    <label>Titulo de la pelicula</label>
+                    <input type="text" class="form-control" placeholder="Ingresar el titulo de la pelicula" [(ngModel)]="movie.tittle">
+                </div>
+                <div class="form-group">
+                    <label>Descripción de la pelicula</label>
+                    <textarea type="text" class="form-control" rows="5" placeholder="Ingresar una descripcion de la pelicula"
+                        [(ngModel)]="movie.description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Link de la imagen</label>
+                    <input class="form-control" placeholder="Ingresar el link de una imagen" [(ngModel)]="movie.link">
+                </div>
+
+                <hr>
+                <button type="button" class="btn btn-primary" (click)="createMovie()">Crear pelicula</button>&nbsp;
+                <button type="button" class="btn btn-secondary" (click)="cleanForm()">Limpiar</button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
